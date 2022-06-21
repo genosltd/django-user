@@ -1,0 +1,19 @@
+# vim
+.*.swp
+
+# pandoc
+README.html
+
+# coverage
+.coverage
+htmlcov
+
+# pip
+*.egg-info
+
+# build
+dist
+build
+
+# django
+db.sqlite3
