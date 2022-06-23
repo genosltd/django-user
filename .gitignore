@@ -9,11 +9,15 @@ README.html
 htmlcov
 
 # pip
+.eggs
 *.egg-info
 
 # build
 dist
 build
+
+# setuptools_scm
+src/django_user/version.py
 
 # django
 db.sqlite3
