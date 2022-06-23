@@ -102,6 +102,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# https://docs.djangoproject.com/en/4.0/ref/settings/#login-url
+LOGIN_URL = 'admin:login'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -115,6 +117,31 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# Email
+# https://docs.djangoproject.com/en/4.0/ref/settings/#email
+
+# ADMINS
+# DEFAULT_CHARSET
+# DEFAULT_FROM_EMAIL
+
+# https://docs.djangoproject.com/en/4.0/topics/email/#console-backend
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# EMAIL_FILE_PATH
+# EMAIL_HOST
+# EMAIL_HOST_PASSWORD
+# EMAIL_HOST_USER
+# EMAIL_PORT
+# EMAIL_SSL_CERTFILE
+# EMAIL_SSL_KEYFILE
+# EMAIL_SUBJECT_PREFIX
+# EMAIL_TIMEOUT
+# EMAIL_USE_LOCALTIME
+# EMAIL_USE_TLS
+# MANAGERS
+# SERVER_EMAIL
 
 
 # Static files (CSS, JavaScript, Images)
