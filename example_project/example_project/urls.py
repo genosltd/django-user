@@ -20,5 +20,5 @@ from django_user.urls import urlpatterns as du_urlpatterns
 
 
 urlpatterns = du_urlpatterns + [
-    path('admin/', admin.site.urls),
+    path('', admin.site.urls),
 ]
