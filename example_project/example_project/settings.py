@@ -108,6 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LOGIN_URL = 'admin:login'
 
 AUTH_USER_MODEL = 'django_user.User'
+AUTHENTICATION_BACKENDS = ['django_user.auth.ModelBackend']
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -152,4 +153,3 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-

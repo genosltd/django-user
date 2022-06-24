@@ -12,7 +12,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'test_app',
+    'tests.test_app',
     'django_user',
 ]
 
@@ -50,3 +50,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'django_user.User'
+AUTHENTICATION_BACKENDS = 'django_user.auth.ModelBackend'
