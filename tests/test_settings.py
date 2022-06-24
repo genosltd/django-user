@@ -54,4 +54,4 @@ DATABASES = {
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'django_user.User'
-AUTHENTICATION_BACKENDS = 'django_user.auth.ModelBackend'
+AUTHENTICATION_BACKENDS = ['django_user.auth.ModelBackend']

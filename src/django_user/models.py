@@ -7,10 +7,9 @@ import re
 import datetime
 
 
-USERNAME_REGEX = getattr(settings, 'USERNAME_REGEX', r'[a-z]+@[a-z]+.[a-z]+')
-
-
 class User(AbstractUser):
+    USERNAME_REGEX = r'[a-z]+@[a-z]+.[a-z]+'
+
     failed_logins_limit = 3
     failed_logins_period = datetime.timedelta(minutes=5)
 
@@ -19,10 +18,13 @@ class User(AbstractUser):
                                                            default=0)
 
     def clean(self):
+        USERNAME_REGEX = getattr(settings, 'USERNAME_REGEX', self.USERNAME_REGEX)
         username = self.username.lower()
         if not re.match(USERNAME_REGEX, username):
-            raise ValidationError({'username':
-                                   "Username should be your 'genos.hr' email"})
+            raise ValidationError({
+                'username':
+                f"Username should match '{self.USERNAME_REGEX}' pattern"
+            })
 
         if not self._state.adding:
             self.email = self.username
