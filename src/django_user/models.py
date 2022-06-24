@@ -1,9 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import NON_FIELD_ERRORS, ValidationError
+from django.conf import settings
 
 import re
 import datetime
+
+
+USERNAME_REGEX = getattr(settings, 'USERNAME_REGEX', r'[a-z]+@[a-z]+.[a-z]+')
 
 
 class User(AbstractUser):
@@ -16,7 +20,7 @@ class User(AbstractUser):
 
     def clean(self):
         username = self.username.lower()
-        if not re.match(r'[a-z]+@genos.hr', username):
+        if not re.match(USERNAME_REGEX, username):
             raise ValidationError({'username':
                                    "Username should be your 'genos.hr' email"})
 

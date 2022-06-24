@@ -110,6 +110,8 @@ LOGIN_URL = 'admin:login'
 AUTH_USER_MODEL = 'django_user.User'
 AUTHENTICATION_BACKENDS = ['django_user.auth.ModelBackend']
 
+USERNAME_REGEX = r'[a-z]+@example.com'
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
