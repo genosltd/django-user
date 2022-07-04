@@ -4,10 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "~=3.2.1"
-django-user = {editable = true, path = "."}
 
 [dev-packages]
+django-user = {editable = true, path = "."}
 cookiecutter = "*"
 coverage = "*"
 build = "*"
